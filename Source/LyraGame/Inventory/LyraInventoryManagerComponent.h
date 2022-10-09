@@ -127,7 +127,7 @@ struct TStructOpsTypeTraits<FLyraInventoryList> : public TStructOpsTypeTraitsBas
  * Manages an inventory
  */
 UCLASS(BlueprintType)
-class ULyraInventoryManagerComponent : public UActorComponent
+class LYRAGAME_API ULyraInventoryManagerComponent : public UActorComponent
 {
 	GENERATED_BODY()
 

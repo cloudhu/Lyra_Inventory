@@ -13,7 +13,7 @@ class ULyraEquipmentInstance;
 class ULyraEquipmentManagerComponent;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
-class ULyraQuickBarComponent : public UControllerComponent
+class LYRAGAME_API ULyraQuickBarComponent : public UControllerComponent
 {
 	GENERATED_BODY()
 
@@ -52,6 +52,10 @@ public:
 
 	virtual void BeginPlay() override;
 
+	void SwapItemSlot(int32 SlotIndexA, int32 SlotIndexB);
+
+	void UnequipItem(ULyraInventoryItemInstance* SlotItem);
+	void EquipItem(ULyraInventoryItemInstance* SlotItem);
 private:
 	void UnequipItemInSlot();
 	void EquipItemInSlot();
@@ -60,7 +64,7 @@ private:
 
 protected:
 	UPROPERTY()
-	int32 NumSlots = 3;
+	int32 NumSlots = 6;
 
 	UFUNCTION()
 	void OnRep_Slots();

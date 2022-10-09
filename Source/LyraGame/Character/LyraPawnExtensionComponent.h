@@ -21,7 +21,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLyraDynamicMulticastDelegate);
  *	Component used to add functionality to all Pawn classes.
  */
 UCLASS()
-class ULyraPawnExtensionComponent : public ULyraPawnComponent
+class LYRAGAME_API ULyraPawnExtensionComponent : public ULyraPawnComponent
 {
 	GENERATED_BODY()
 

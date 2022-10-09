@@ -12,7 +12,7 @@
  * ULyraInventoryItemInstance
  */
 UCLASS(BlueprintType)
-class ULyraInventoryItemInstance : public UObject
+class LYRAGAME_API ULyraInventoryItemInstance : public UObject
 {
 	GENERATED_BODY()
 
@@ -39,6 +39,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category=Inventory)
 	bool HasStatTag(FGameplayTag Tag) const;
 
+	UFUNCTION(BlueprintCallable, Category = Inventory)
 	TSubclassOf<ULyraInventoryItemDefinition> GetItemDef() const
 	{
 		return ItemDef;
