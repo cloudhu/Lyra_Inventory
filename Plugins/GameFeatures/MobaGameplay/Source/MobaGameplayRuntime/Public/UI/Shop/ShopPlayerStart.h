@@ -1,11 +1,9 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright CloudHu Games, Inc. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
-#include "ModularPlayerState.h"
-#include "AbilitySystemInterface.h"
-#include "System/GameplayTagStack.h"
+#include "GameplayTagContainer.h"
 #include "GameFramework/PlayerStart.h"
 #include "ShopPlayerStart.generated.h"
 

@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright CloudHu Games, Inc. All Rights Reserved.
 
 #pragma once
 
@@ -51,10 +51,10 @@ struct FSlotTable :public FTableRowBase
 
 public:
 		FSlotTable();
-
+		//编号
 	UPROPERTY(EditDefaultsOnly, Category = "Slot")
 		int32 ID;
-
+	//魂力数量
 	UPROPERTY(EditDefaultsOnly, Category = "Slot")
 		int32 SlotSoul;
 	//名称
@@ -74,14 +74,14 @@ public:
 	//被动效果
 	UPROPERTY(EditDefaultsOnly, Category = "Slot")
 		FText RichTextPassive;
-
+	//图标
 	UPROPERTY(EditDefaultsOnly, Category = "Slot")
 		UTexture2D* SlotIcon;
-
+	//物品类型
 	UPROPERTY(EditDefaultsOnly, Category = "Slot")
 		TArray<ESlotType> SlotType;
 
-	//装备合成
+	//装备合成数组
 	UPROPERTY(EditDefaultsOnly, Category = "Slot")
 		TArray<int32> Childrens;
 
@@ -93,11 +93,12 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Slot)
 		TSubclassOf<UGameplayEffect> CostGameplayEffectClass;
 public:
+	//获取物品定义
 	TSubclassOf<ULyraInventoryItemDefinition> GetItemDef() const
 	{
 		return ItemDefinition;
 	}
-
+	//有效验证
 	bool IsValid() const;
 
 	//是否是消耗品,如果是消耗品,可以叠加5个,其他物品无法叠加,消耗品可以在满格的情况下购买,并且购买后直接消耗掉

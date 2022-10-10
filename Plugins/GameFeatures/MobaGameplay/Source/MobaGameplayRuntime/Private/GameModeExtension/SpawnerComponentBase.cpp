@@ -1,4 +1,4 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 #include "GameModeExtension/SpawnerComponentBase.h"
 #include "Engine/World.h"
 #include "GameFramework/PlayerState.h"

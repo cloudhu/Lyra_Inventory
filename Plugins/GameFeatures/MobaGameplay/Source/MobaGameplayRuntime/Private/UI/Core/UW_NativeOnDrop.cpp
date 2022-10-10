@@ -1,4 +1,4 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 #include "UI/Core/UW_NativeOnDrop.h"
 #include "Blueprint/DragDropOperation.h"
 #include "UI/Shop/Item/UW_ItemBase.h"

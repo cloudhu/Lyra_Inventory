@@ -1,4 +1,4 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 
 
 #include "UI/Data/SlotData.h"

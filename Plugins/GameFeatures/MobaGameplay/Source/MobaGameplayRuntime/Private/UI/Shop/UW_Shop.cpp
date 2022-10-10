@@ -37,6 +37,7 @@ void UUW_Shop::NativeConstruct()
 			{
 				TeamTag = FGameplayTag::RequestGameplayTag(FName("CharacterType.Blue"));
 			}
+
 			//循环寻找商店的出生点,找到之后获取其位置
 			for (TActorIterator<AShopPlayerStart> It(World); It; ++It)
 			{

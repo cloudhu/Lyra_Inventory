@@ -3,6 +3,8 @@
 #include "UI/UW_DragDropIcon.h"
 #include "Equipment/LyraQuickBarComponent.h"
 #include "Inventory/LyraInventoryItemInstance.h"
+#include "Blueprint/DragDropOperation.h"
+#include "PlayerStateExtension/MobaPlayerStateComponent.h"
 
 UUW_InventorySlot::UUW_InventorySlot(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer)

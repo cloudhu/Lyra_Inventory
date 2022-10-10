@@ -1,4 +1,4 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 #include "GAS/AttributeSet/MobaAttributeSet.h"
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "Net/UnrealNetwork.h"

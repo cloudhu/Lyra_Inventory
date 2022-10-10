@@ -1,9 +1,10 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Components/GameStateComponent.h"
+#include "GameplayTagContainer.h"
 #include "SpawnerComponentBase.generated.h"
 
 class ULyraExperienceDefinition;

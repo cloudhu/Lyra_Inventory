@@ -1,4 +1,4 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 #include "GameModeExtension/TwoTeamSpawningManagerComponent.h"
 #include "Teams/LyraTeamSubsystem.h"
 #include "Player/LyraPlayerStart.h"

@@ -1,4 +1,4 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 #include "UI/Core/MobaActivatableWidget.h"
 #include "Editor/WidgetCompilerLog.h"
 #include "Input/CommonInputMode.h"

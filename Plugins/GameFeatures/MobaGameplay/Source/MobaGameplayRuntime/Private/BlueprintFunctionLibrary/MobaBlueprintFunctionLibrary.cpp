@@ -1,4 +1,4 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 #include "BlueprintFunctionLibrary/MobaBlueprintFunctionLibrary.h"
 #include "AIController.h"
 #include "Player/LyraPlayerStart.h"

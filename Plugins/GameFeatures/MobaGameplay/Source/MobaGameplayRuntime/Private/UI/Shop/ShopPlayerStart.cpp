@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright CloudHu Games, Inc. All Rights Reserved.
 
 #include "UI/Shop/ShopPlayerStart.h"
 #include "GameFramework/GameModeBase.h"

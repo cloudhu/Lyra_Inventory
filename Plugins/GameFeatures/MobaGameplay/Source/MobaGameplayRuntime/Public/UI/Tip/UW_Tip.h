@@ -1,9 +1,9 @@
-// Copyright GanBowen. All Rights Reserved.
+// Copyright CloudHu. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UI/Core/UW_Base.h"
+#include "Blueprint/UserWidget.h"
 #include "UW_Tip.generated.h"
 
 class UCommonTextBlock;
@@ -12,7 +12,7 @@ class UHorizontalBox;
  * 提示
  */
 UCLASS()
-class MOBAGAMEPLAYRUNTIME_API UUW_Tip : public UUW_Base
+class MOBAGAMEPLAYRUNTIME_API UUW_Tip : public UUserWidget
 {
 	GENERATED_BODY()
 public:
@@ -21,6 +21,7 @@ public:
 	UPROPERTY(meta = (BindWidget))
 		UCommonTextBlock* DisplayName;
 
+	//名称盒子
 	UPROPERTY(meta = (BindWidget))
 		UHorizontalBox* NameBox;
 
@@ -55,20 +56,14 @@ public:
 	UPROPERTY(meta = (BindWidget))
 		UHorizontalBox* SoulBox;
 public:
+	void SetDisplayNameText(const FText& InText);
 
-	//UFUNCTION(BlueprintCallable, Category = Tip)
-		void SetDisplayNameText(const FText& InText);
-
-	//UFUNCTION(BlueprintCallable, Category = Tip)
 	void SetDescribeText(const FText& InText);
 
-	//UFUNCTION(BlueprintCallable, Category = Tip)
 	void SetTextAction(const FText& InText);
 
-	//UFUNCTION(BlueprintCallable, Category = Tip)
 	void SetTextActive(const FText& InText);
 
-	//UFUNCTION(BlueprintCallable, Category = Tip)
 	void SetTextPassive(const FText& InText);
 
 	void SetTextSoul(const FText& InText);
