@@ -2,6 +2,8 @@
 #include "UI/Core/UW_Base.h"
 #include "Animation/WidgetAnimation.h"
 #include "UI/Tip/UW_Tip.h"
+#include "PlayerStateExtension/MobaPlayerStateComponent.h"
+#include "GameFramework/PlayerState.h"
 
 UUW_Base::UUW_Base(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer)

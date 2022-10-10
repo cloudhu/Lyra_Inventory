@@ -11,7 +11,7 @@ class UButton;
 /**
  * 物品基类
  */
-UCLASS()
+UCLASS(Abstract, BlueprintType, Blueprintable)
 class MOBAGAMEPLAYRUNTIME_API UUW_ItemBase : public UUW_Base
 {
 	GENERATED_BODY()

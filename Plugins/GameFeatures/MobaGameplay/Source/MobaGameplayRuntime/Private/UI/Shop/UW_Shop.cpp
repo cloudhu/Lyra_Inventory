@@ -11,8 +11,11 @@
 #include "ThreadManage.h"
 #include "UI/Shop/UW_Inventory.h"
 #include "GAS/AttributeSet/MobaAttributeSet.h"
-#include "AbilitySystemBlueprintLibrary.h"
+#include "AbilitySystemGlobals.h"
 #include "AbilitySystemComponent.h"
+#include "EngineUtils.h"
+#include "UI/Shop/Item/UW_Item.h"
+#include "GameFramework/PlayerState.h"
 
 UUW_Shop::UUW_Shop(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer)
@@ -104,7 +107,7 @@ void UUW_Shop::BindSoulNumChanged()
 {
 	if (APlayerState* PS = GetPlayerState())
 	{
-		if (UAbilitySystemComponent* ASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(PS))
+		if (UAbilitySystemComponent* ASC = UAbilitySystemGlobals::GetAbilitySystemComponentFromActor(PS))
 		{
 			// 注册属性变化代理函数,监听属性的变化
 			ASC->GetGameplayAttributeValueChangeDelegate(UMobaAttributeSet::GetSoulAttribute()).AddUObject(this, &ThisClass::HandleSoulNumChanged);

@@ -12,7 +12,7 @@ class UUW_Tip;
 /**
  * UI基类
  */
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract, BlueprintType, Blueprintable)
 class MOBAGAMEPLAYRUNTIME_API UUW_Base : public UUserWidget
 {
 	GENERATED_BODY()

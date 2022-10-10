@@ -15,7 +15,7 @@ DECLARE_DELEGATE_OneParam(FCallEquipmentSynthesisDelegate, int32)
 /**
  * 物品
  */
-UCLASS()
+UCLASS(Abstract, BlueprintType, Blueprintable)
 class MOBAGAMEPLAYRUNTIME_API UUW_Item : public UUW_ItemBase
 {
 	GENERATED_BODY()
@@ -36,6 +36,9 @@ public:
 protected:
 	//在这里完成鼠标右键的判定,通过该事件来通知合成面板展示合成信息
 	virtual	FReply NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent);
+
+	virtual void NativeConstruct() override;
+
 public:
 	void SetItemName(const FText& InName);//设置物品名称
 	void SetItemSoul(const int32 InSoul);//设置魂力数量

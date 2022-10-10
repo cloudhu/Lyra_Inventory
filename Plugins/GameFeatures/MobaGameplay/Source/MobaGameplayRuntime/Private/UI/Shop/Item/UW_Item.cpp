@@ -22,6 +22,11 @@ FReply UUW_Item::NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPoi
 	return FReply::Handled();
 }
 
+void UUW_Item::NativeConstruct()
+{
+	Super::NativeConstruct();
+}
+
 void UUW_Item::SetItemName(const FText& InName)
 {
 	ItemName->SetText(InName);

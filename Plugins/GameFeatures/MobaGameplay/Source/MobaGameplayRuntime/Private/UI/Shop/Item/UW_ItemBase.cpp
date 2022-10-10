@@ -6,6 +6,7 @@
 #include "NativeGameplayTags.h"
 #include "GameFramework/GameplayMessageSubsystem.h"
 #include "UI/Data/MobaVerbMessage.h"
+#include "PlayerStateExtension/MobaPlayerStateComponent.h"
 
 void UUW_ItemBase::NativeConstruct()
 {
