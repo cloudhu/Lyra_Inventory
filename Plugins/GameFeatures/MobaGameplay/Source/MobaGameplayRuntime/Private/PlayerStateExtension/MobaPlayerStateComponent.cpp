@@ -9,31 +9,22 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemComponent.h"
 #include "NativeGameplayTags.h"
+//物品数量更新消息GT
 UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_Lyra_Inventory_Message_StackChanged, "Lyra.Inventory.Message.StackChanged");
-//新增
+//背包物品数量GT
 UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_Lyra_Inventory_Item_Count, "Lyra.Inventory.Item.Count");
-//新增
 
 UMobaPlayerStateComponent::UMobaPlayerStateComponent(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	//DataTable'/MobaGameplay/Data/DT_SlotTable_MobaShop.DT_SlotTable_MobaShop'
+	//DataTable'/MobaGameplay/Data/DT_SlotTable_MobaShop.DT_SlotTable_MobaShop' 读取配置表到指针
 	static ConstructorHelpers::FObjectFinder<UDataTable> Slot_Table(TEXT("/MobaGameplay/Data/DT_SlotTable_MobaShop"));
 	SlotTablePtr = Slot_Table.Object;
 }
 
-FSlotData* UMobaPlayerStateComponent::GetSlotData(int32 InSlotID)
-{
-	if (InventorySlots.Contains(InSlotID))
-	{
-		return &InventorySlots[InSlotID];
-	}
-	return nullptr;
-}
-
 const TArray<FSlotTable*>* UMobaPlayerStateComponent::GetSlotTablesTemplate()
 {
-	if (!CacheSlotTables.Num())
+	if (!CacheSlotTables.Num())//如果没有缓存则读取配置表到缓存
 	{
 		if (SlotTablePtr)
 		{
@@ -153,7 +144,7 @@ void UMobaPlayerStateComponent::Use_Implementation(int32 InSlotID, int32 InSlotI
 void UMobaPlayerStateComponent::Sell_Implementation(int32 InSlotID, int32 InSlotIndex)
 {
 	if (const FSlotTable* InTable = GetSlotTableTemplate(InSlotID))
-	{
+	{//出售的逻辑比较简单,五折收购,移除物品
 		if (ULyraInventoryManagerComponent* InventoryComponent = GetInventoryManagerComponent())
 		{
 			if (ULyraInventoryItemInstance* Result = InventoryComponent->FindFirstItemStackByDefinition(InTable->ItemDefinition))
@@ -284,7 +275,7 @@ int32 UMobaPlayerStateComponent::CalculateSoulNumber(const FSlotTable* InTable, 
 		//服务器上执行
 #if WITH_SERVER_CODE
 	//I  移除物品子项
-		if (bIsServer)
+		if (bIsServer)//加这个判断的原因是在编辑器运行时,编辑器既是客户端,又是权威
 		{
 			if (ULyraInventoryManagerComponent* InventoryComponent = GetInventoryManagerComponent())
 			{
